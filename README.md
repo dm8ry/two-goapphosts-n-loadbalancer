@@ -2,6 +2,7 @@ Purpose:
 --------
 
 Create an infrastructure as code that creates a SaaS service environment:
+
 - using Vagrant
 - using docker-compose.yml
 
@@ -48,6 +49,8 @@ Each of two application hosts are based on Go language inside a Docker Container
 
 The structure of source directory:
 
+```
+
 /----
     +-- Vagrantfile
     |
@@ -73,6 +76,8 @@ The structure of source directory:
                                       |
                                       +------- go.sum
 
+```
+
 How to deploy the environment:
 ------------------------------
 
@@ -85,33 +90,39 @@ docker-compose build
 
 Builds the following images:
 
+```
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
 dragontail_d_loadbalancer   latest              8783d04ce24d        44 minutes ago      132MB
 dragontail_d_app2           latest              228789363e55        44 minutes ago      821MB
 dragontail_d_app1           latest              655c07ad1b1a        44 minutes ago      821MB
-
+```
 
 docker-compose up -d
 
 Starts app1, app2 and loadbalancer:
 
+```
 Starting app2 ... done
 Starting app1 ... done
 Starting loadbalancer ... done
+```
 
 docker-compose ps
 
 Should provide output:
 
+```
 CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS              PORTS                NAMES
 534909f7a46f        dragontail_d_loadbalancer   "/docker-entrypoint.…"   45 minutes ago      Up 20 minutes       0.0.0.0:80->80/tcp   loadbalancer
 f411e3e4ea95        dragontail_d_app2           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app2
 8f3091398fb4        dragontail_d_app1           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app1
+```
 
 docker-compose down
 
 Brings environment down:
 
+```
 Stopping loadbalancer ... done
 Stopping app2         ... done
 Stopping app1         ... done
@@ -119,7 +130,7 @@ Removing loadbalancer ... done
 Removing app2         ... done
 Removing app1         ... done
 Removing network dragontail_d_default
-
+```
 
 Using vagrant:
 --------------
@@ -136,9 +147,11 @@ Shows state of environment:
 
 Current machine states:
 
+```
 app1                      running (docker)
 app2                      running (docker)
 loadbalancer              running (docker)
+```
 
 vagrant destroy -f
 
@@ -154,7 +167,8 @@ It checks LoadBalancer, App1 and App2 statuses, prints their IPs, and checks con
 The output trace will look as follows:
 
 dmi@dmi-lpt:~/dragontail_d$ ./health_monitor_check.sh 
- 
+
+``` 
 ----------------------------------------
 Check Configuration and Test Environment
 ----------------------------------------
@@ -222,7 +236,7 @@ ok
 Status: Success
  
 dmi@dmi-lpt:~/dragontail_d$ 
-
+```
 
 ---------------- The End ---------------------
 
