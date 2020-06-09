@@ -2,36 +2,36 @@ version: '3.2'
 
 services:
 
-  app1:
+ app1:
     build:
       context: app/
-      container_name: 
+    container_name: 
         "app1"
-      hostname:
+    hostname:
         "app1.host"
-      expose:
+    expose:
         - "8080"
 
-  app2:
+ app2:
     build:
       context: app/
-      container_name:
+    container_name:
         "app2"
-      hostname:
+    hostname:
         "app2.host"
-      expose:
+    expose:
         - "8080"
 
-   loadbalancer:
+ loadbalancer:
      build:
        context: lb/
-       container_name:
+     container_name:
          "loadbalancer"
-       hostname:
+     hostname:
          "loadbalancer.host"
-       ports:
+     ports:
          - "80:80"
-       links:
+     links:
          - app1
          - app2
 

@@ -1,5 +1,5 @@
 # using ngnix base image
-FROM ngnix
+FROM nginx
 
 # delete nginx default .conf file
 RUN rm /etc/nginx/conf.d/default.conf
