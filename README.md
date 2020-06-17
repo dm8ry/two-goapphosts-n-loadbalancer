@@ -92,9 +92,9 @@ Builds the following images:
 
 ```
 REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
-dragontail_d_loadbalancer   latest              8783d04ce24d        44 minutes ago      132MB
-dragontail_d_app2           latest              228789363e55        44 minutes ago      821MB
-dragontail_d_app1           latest              655c07ad1b1a        44 minutes ago      821MB
+dima_loadbalancer   latest              8783d04ce24d        44 minutes ago      132MB
+dima_app2           latest              228789363e55        44 minutes ago      821MB
+dima_app1           latest              655c07ad1b1a        44 minutes ago      821MB
 ```
 
 docker-compose up -d
@@ -113,9 +113,9 @@ Should provide output:
 
 ```
 CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS              PORTS                NAMES
-534909f7a46f        dragontail_d_loadbalancer   "/docker-entrypoint.…"   45 minutes ago      Up 20 minutes       0.0.0.0:80->80/tcp   loadbalancer
-f411e3e4ea95        dragontail_d_app2           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app2
-8f3091398fb4        dragontail_d_app1           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app1
+534909f7a46f        dima_loadbalancer   "/docker-entrypoint.…"   45 minutes ago      Up 20 minutes       0.0.0.0:80->80/tcp   loadbalancer
+f411e3e4ea95        dima_app2           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app2
+8f3091398fb4        dima_app1           "./main"                 45 minutes ago      Up 20 minutes       8080/tcp             app1
 ```
 
 docker-compose down
@@ -129,7 +129,7 @@ Stopping app1         ... done
 Removing loadbalancer ... done
 Removing app2         ... done
 Removing app1         ... done
-Removing network dragontail_d_default
+Removing network dima_default
 ```
 
 Using vagrant:
