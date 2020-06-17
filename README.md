@@ -166,7 +166,7 @@ It checks LoadBalancer, App1 and App2 statuses, prints their IPs, and checks con
 
 The output trace will look as follows:
 
-dmi@dmi-lpt:~/dragontail_d$ ./health_monitor_check.sh 
+dmi@dmi-lpt:~/dima$ ./health_monitor_check.sh 
 
 ``` 
 ----------------------------------------
@@ -235,7 +235,7 @@ ok
  
 Status: Success
  
-dmi@dmi-lpt:~/dragontail_d$ 
+dmi@dmi-lpt:~/dima$ 
 ```
 
 ---------------- The End ---------------------
